@@ -1,0 +1,19 @@
+{
+  "name": "basic-setup",
+  "version": "1.0.0",
+  "description": "introduction ECMAScript6",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abdulhasani/basic-es6.git"
+  },
+  "author": "hasani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abdulhasani/basic-es6/issues"
+  },
+  "homepage": "https://github.com/abdulhasani/basic-es6#readme"
+}
