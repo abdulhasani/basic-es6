@@ -63,24 +63,61 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ 2:
+/******/ ([
+/* 0 */,
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 /**
  * Created by Hasani on 3/8/2017.
  */
-var url = 'rates.json';
-fetch(url).then(function (response) {
-    return response.json();
-}).then(function (rates) {
+var rates = [{
+    "name": 'Dalban',
+    "rate": '13',
+    "years": '30'
+}, {
+    "name": 'Hasani',
+    "rate": '2.6',
+    "years": '24'
+}, {
+    "name": 'Abdul',
+    "rate": '5.6',
+    "years": '19'
+}];
+var findAll = exports.findAll = function findAll() {
+    return new Promise(function (resolve, reject) {
+        if (rates) {
+            resolve(rates);
+        } else {
+            reject('no rates');
+        }
+    });
+};
+
+/***/ }),
+/* 2 */,
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _rateServiceMock = __webpack_require__(1);
+
+var service = _interopRequireWildcard(_rateServiceMock);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+service.findAll().then(function (rates) {
     var html = '';
     rates.forEach(function (rate) {
         return html += '\n            <tr>\n            <td>' + rate.name + '</td>\n            <td>' + rate.years + '</td>\n            <td>' + rate.rate + '%</td>\n            </tr>';
@@ -88,9 +125,10 @@ fetch(url).then(function (response) {
     document.getElementById('rates').innerHTML = html;
 }).catch(function (e) {
     return console.log(e);
-});
+}); /**
+     * Created by Hasani on 3/8/2017.
+     */
 
 /***/ })
-
-/******/ });
+/******/ ]);
 //# sourceMappingURL=ratefinder.bundle.js.map

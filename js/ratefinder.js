@@ -1,9 +1,8 @@
 /**
  * Created by Hasani on 3/8/2017.
  */
-let url = 'rates.json'
-fetch(url)
-    .then(response => response.json())
+import * as service from './rate-service-mock';
+service.findAll()
     .then(rates => {
         let html = '';
         rates.forEach(rate => html += `
